@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scxml xmlns="http://www.w3.org/2005/07/scxml" version="1.0" binding="early" name="mystatemachine" qt:editorversion="4.2.1" xmlns:qt="http://www.qt.io/2015/02/scxml-ext" initial="hold">
+    <qt:editorinfo initialGeometry="149.38;53.20;-20;-20;40;40"/>
+    <state id="driving">
+        <qt:editorinfo geometry="826.71;206.68;-60;-50;120;100" scenegeometry="826.71;206.68;766.71;156.68;120;100"/>
+    </state>
+    <state id="hold">
+        <qt:editorinfo geometry="149.38;225.09;-60;-50;120;100" scenegeometry="149.38;225.09;89.38;175.09;120;100"/>
+        <transition type="external" event="startAcceleration" target="holdGoingToDriving">
+            <qt:editorinfo endTargetFactors="8.40;31.34" localGeometry="121.76;-31.71"/>
+        </transition>
+        <onentry>
+            <send event="startAcceleration" delay="3s"/>
+        </onentry>
+    </state>
+    <state id="acceleration">
+        <qt:editorinfo geometry="429.72;158.59;-95.49;-83.21;336;313.21" scenegeometry="429.72;158.59;334.23;75.38;336;313.21"/>
+        <state id="holdGoingToDriving">
+            <qt:editorinfo geometry="22.51;25.58;-98;-50;296;100.50" scenegeometry="452.23;184.17;354.23;134.17;296;100.50"/>
+            <transition type="external" event="goDriving" target="driving">
+                <qt:editorinfo endTargetFactors="25.17;44.71" startTargetFactors="92.31;33.62"/>
+            </transition>
+        </state>
+    </state>
+</scxml>
