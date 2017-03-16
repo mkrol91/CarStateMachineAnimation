@@ -11,9 +11,10 @@ Window {
 
     Page1Form{
         anchors.fill: parent
-        mouseArea.onClicked: {
-            console.log(qsTr('Clicked on background'))
-        }
+//        mouseArea.onClicked: {
+//            console.log(qsTr('Clicked on background'))
+//        }
+
     }
 
 }
