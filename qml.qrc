@@ -6,5 +6,7 @@
         <file>qtquickcontrols2.conf</file>
         <file>carHold.png</file>
         <file>carDriving.png</file>
+        <file>drivingGoingToHold.png</file>
+        <file>holdGoingToDriving.png</file>
     </qresource>
 </RCC>

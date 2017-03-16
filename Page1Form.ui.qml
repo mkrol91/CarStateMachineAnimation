@@ -1,10 +1,14 @@
 import QtQuick 2.7
 import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.0
+import CarStateMachine 1.0
 
 Item {
     property alias rectangle: rectangle
     property alias mouseArea: mouseArea
+    property CarStateMachine carStateMachine: CarStateMachine {
+        running: true
+    }
     MouseArea {
         id: mouseArea
         anchors.fill: parent
@@ -46,6 +50,7 @@ Item {
     states: [
         State {
             name: "carDriving"
+            when: carStateMachine.driving
 
             PropertyChanges {
                 target: image1
@@ -67,6 +72,7 @@ Item {
         },
         State {
             name: "holdGoingToDriving"
+            when: carStateMachine.holdGoingToDriving
 
             PropertyChanges {
                 target: image2
@@ -86,6 +92,7 @@ Item {
         },
         State {
             name: "drivingGoingToHold"
+            when: carStateMachine.drivingGoingToHold
 
             PropertyChanges {
                 target: image3
