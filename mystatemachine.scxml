@@ -8,10 +8,11 @@
             <state id="drivingUp">
                 <qt:editorinfo scenegeometry="913.34;388.69;853.34;338.69;120;100" geometry="-28.61;20.47;-60;-50;120;100"/>
                 <transition type="external" event="goCounterUp" target="counterUp">
-                    <qt:editorinfo startTargetFactors="81.37;87.07"/>
+                    <qt:editorinfo endTargetFactors="11.76;11.37" startTargetFactors="81.37;87.07"/>
                 </transition>
                 <onentry>
                     <log label="state" expr="&quot;drivingUp&quot;"/>
+                    <send event="goCounterUp" delay="3s"/>
                 </onentry>
             </state>
             <state id="drivingDown">
@@ -35,10 +36,9 @@
                     <qt:editorinfo endTargetFactors="72.70;35.34"/>
                 </transition>
                 <onentry>
-                    <log label="state: counter up" expr="counter up"/>
+                    <log label="state: counter up" expr="&quot;counter up&quot;"/>
                 </onentry>
             </state>
-            <onentry/>
         </state>
         <state id="acceleration">
             <qt:editorinfo scenegeometry="417.44;414.80;292.43;330.67;385.46;313.13" geometry="160.69;-332;-125.01;-84.13;385.46;313.13"/>
