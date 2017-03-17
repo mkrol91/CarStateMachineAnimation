@@ -6,7 +6,7 @@ import CarStateMachine 1.0
 Item {
     property alias rectangle: rectangle
     property alias mouseArea: mouseArea
-    property CarStateMachine carStateMachine: CarStateMachine {      
+    property CarStateMachine carStateMachine: CarStateMachine {
         running: true
     }
     MouseArea {
@@ -49,7 +49,6 @@ Item {
     states: [
         State {
             name: "carDriving"
-            when: carStateMachine.driving
 
             PropertyChanges {
                 target: image1
@@ -105,6 +104,48 @@ Item {
                 anchors.topMargin: 0
                 rotation: -15
                 opacity: 1
+            }
+        },
+        State {
+            name: "drivingUp"
+            when: carStateMachine.drivingUp
+            PropertyChanges {
+                target: image1
+                x: "-25"
+                y: 22
+                width: 691
+                height: 436
+                anchors.bottomMargin: 57
+                anchors.rightMargin: 0
+                opacity: 1
+                anchors.topMargin: -62
+                anchors.leftMargin: 0
+            }
+
+            PropertyChanges {
+                target: image
+                visible: false
+            }
+        },
+        State {
+            name: "drivingDown"
+            when: carStateMachine.drivingDown
+            PropertyChanges {
+                target: image1
+                x: "-25"
+                y: 22
+                width: 691
+                height: 436
+                anchors.bottomMargin: -57
+                anchors.rightMargin: 0
+                opacity: 1
+                anchors.topMargin: 62
+                anchors.leftMargin: 0
+            }
+
+            PropertyChanges {
+                target: image
+                visible: true
             }
         }
     ]
