@@ -1,3 +1,3 @@
-function someFunc() {
-  var i = 2;
+function incDriveCounter() {
+    driveCounter++;
 }

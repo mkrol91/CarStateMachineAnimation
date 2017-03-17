@@ -25,13 +25,15 @@
                 </onentry>
             </state>
             <state id="counterUp">
-                <qt:editorinfo scenegeometry="1148.96;535.97;1088.96;485.97;120;100" geometry="190.28;167.75;-60;-50;120;100"/>
+                <qt:editorinfo scenegeometry="1156.32;538.42;1096.32;488.42;120;100" geometry="197.64;170.20;-60;-50;120;100"/>
                 <transition type="external" event="goDrivingDown" target="drivingDown">
                     <qt:editorinfo endTargetFactors="72.70;35.34"/>
                 </transition>
                 <onentry>
                     <log label="state: counter up" expr="&quot;counter up&quot;"/>
                     <send event="goDrivingDown" delay="1500ms"/>
+                    <script>incDriveCounter();</script>
+                    <log expr="driveCounter" label="driveCounterValue: "/>
                 </onentry>
             </state>
         </state>
@@ -74,5 +76,6 @@
     </state>
     <datamodel>
         <data id="someData" expr="234"/>
+        <data id="driveCounter" expr="0"/>
     </datamodel>
 </scxml>
