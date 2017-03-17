@@ -6,7 +6,7 @@ import CarStateMachine 1.0
 Item {
     property alias rectangle: rectangle
     property alias mouseArea: mouseArea
-    property CarStateMachine carStateMachine: CarStateMachine {
+    property CarStateMachine carStateMachine: CarStateMachine {      
         running: true
     }
     MouseArea {
@@ -35,8 +35,7 @@ Item {
 
     Image {
         id: image2
-        x: 8
-        y: 59
+        anchors.fill: parent
         source: "holdGoingToDriving.png"
         opacity: 0
     }

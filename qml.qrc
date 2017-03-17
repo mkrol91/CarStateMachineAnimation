@@ -8,5 +8,7 @@
         <file>carDriving.png</file>
         <file>drivingGoingToHold.png</file>
         <file>holdGoingToDriving.png</file>
+        <file>car.js</file>
+        <file>MouseArea.qml</file>
     </qresource>
 </RCC>
