@@ -2,7 +2,7 @@
 <scxml xmlns="http://www.w3.org/2005/07/scxml" version="1.0" binding="early" xmlns:qt="http://www.qt.io/2015/02/scxml-ext" name="CarStateMachine" qt:editorversion="4.2.1" datamodel="ecmascript">
     <script src="car.js"/>
     <state id="carAnimation">
-        <qt:editorinfo geometry="365.61;771.83;-361.39;-702.13;1279.39;757.13" scenegeometry="365.61;771.83;4.22;69.70;1279.39;757.13"/>
+        <qt:editorinfo geometry="364.34;773.10;-361.39;-702.13;1279.39;757.13" scenegeometry="364.34;773.10;2.95;70.97;1279.39;757.13"/>
         <state id="driving">
             <qt:editorinfo geometry="656.94;-389.62;-229.60;-103.41;330.42;488.12" scenegeometry="1022.55;382.21;792.95;278.80;330.42;488.12"/>
             <state id="drivingUp">

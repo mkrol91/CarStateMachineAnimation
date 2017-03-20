@@ -10,5 +10,6 @@
         <file>holdGoingToDriving.png</file>
         <file>car.js</file>
         <file>MouseArea.qml</file>
+        <file>MyImage.qml</file>
     </qresource>
 </RCC>

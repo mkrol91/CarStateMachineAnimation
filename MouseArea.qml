@@ -6,4 +6,8 @@ import CarStateMachine 1.0
 MouseArea {
     id: mouseArea
     anchors.fill: parent
+
+    onClicked: {
+        console.log("asdf")
+    }
 }
