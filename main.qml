@@ -21,6 +21,10 @@ ApplicationWindow {
             }else if (event.key === Qt.Key_Minus){
                 changeAnimationSpeed(false);
                 console.log("dec")
+            }else if (event.key === Qt.Key_Left){
+                accelerate();
+            }else if (event.key === Qt.Key_Right){
+                breaks();
             }
           }
     }

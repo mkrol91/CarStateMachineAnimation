@@ -10,5 +10,15 @@ Page1Form {
             csMachine.submitEvent("speedDown")
         }
     }
+
+    onAccelerate: {
+        csMachine.stop()
+        csMachine.submitEvent("startAccelerate")
+        csMachine.start()
+    }
+
+    onBreaks: {
+        csMachine.submitEvent("goToHold")
+    }
 }
 

@@ -3,15 +3,14 @@
     <script src="car.js"/>
     <datamodel>
         <data id="someData" expr="234"/>
-        <data id="driveCounter" expr="0"/>
         <data id="speed" expr="&quot;100ms&quot;"/>
     </datamodel>
     <parallel id="carAnimation">
-        <qt:editorinfo scenegeometry="-1552.61;-567.81;-1436.30;-254.21;1360.50;685.97" geometry="-1552.61;-567.81;116.31;313.60;1360.50;685.97"/>
+        <qt:editorinfo scenegeometry="-1552.61;-567.81;-1436.30;-256.96;1424.50;822.72" geometry="-1552.61;-567.81;116.31;310.85;1424.50;822.72"/>
         <state id="carAnimFlow">
-            <qt:editorinfo scenegeometry="-1354.68;237.79;-1367.45;-158.67;1209.80;523.59" geometry="197.93;805.60;-12.77;-396.46;1209.80;523.59"/>
+            <qt:editorinfo scenegeometry="-1354.68;237.79;-1367.45;-167.60;1273.97;672.52" geometry="197.93;805.60;-12.77;-405.39;1273.97;672.52"/>
             <state id="holdGoingToDriving">
-                <qt:editorinfo scenegeometry="-944.72;94.60;-988.72;44.85;188;100" geometry="414.19;-144.60;-44;-49.75;188;100"/>
+                <qt:editorinfo scenegeometry="-907.36;114.81;-951.36;65.06;188;100" geometry="447.32;-122.98;-44;-49.75;188;100"/>
                 <transition type="external" event="goDriving" target="drivingUp">
                     <qt:editorinfo endTargetFactors="11.79;23.27" startTargetFactors="92.31;33.62"/>
                 </transition>
@@ -21,17 +20,13 @@
                 </onentry>
             </state>
             <state id="hold">
-                <qt:editorinfo scenegeometry="-1111.73;128.26;-1256.73;78.26;205;100" geometry="247.18;-110.94;-145;-50;205;100"/>
+                <qt:editorinfo scenegeometry="-1107.50;126.85;-1252.50;76.85;205;100" geometry="247.18;-110.94;-145;-50;205;100"/>
                 <onentry>
-                    <log label="state" expr="someData + &quot; some string&quot;"/>
-                    <send event="startAccelerate" delay="200ms"/>
+                    <log label="state" expr="&quot;hold&quot;"/>
                 </onentry>
-                <transition type="external" event="startAccelerate" target="holdGoingToDriving">
-                    <qt:editorinfo endTargetFactors="14.88;34.01"/>
-                </transition>
             </state>
             <state id="drivingGoingToHold">
-                <qt:editorinfo scenegeometry="-991.78;232.33;-1005.28;192.33;186;100" geometry="367.13;-6.87;-13.50;-40;186;100"/>
+                <qt:editorinfo scenegeometry="-965.94;294.31;-979.44;254.31;186;100" geometry="388.74;56.52;-13.50;-40;186;100"/>
                 <onentry>
                     <log label="drivingGoingToHold" expr="&quot;drivingGoingToHold&quot;"/>
                     <send delay="200ms" event="stopCar"/>
@@ -41,40 +36,30 @@
                 </transition>
             </state>
             <initial>
-                <qt:editorinfo scenegeometry="-1008.26;363.36;-1037.26;343.36;49;40" geometry="36.23;-102.97;-29;-20;49;40"/>
+                <qt:editorinfo scenegeometry="-1318.45;134.82;-1347.45;114.82;49;40" geometry="36.23;-102.97;-29;-20;49;40"/>
                 <transition target="hold"/>
             </initial>
             <state id="State_17">
-                <qt:editorinfo scenegeometry="-557.48;-23.70;-745.67;-87.25;528.19;409.37" geometry="797.20;-261.49;-188.19;-63.55;528.19;409.37"/>
+                <qt:editorinfo scenegeometry="-557.48;-23.70;-745.67;-87.25;632.19;518.37" geometry="797.20;-261.49;-188.19;-63.55;632.19;518.37"/>
                 <state id="drivingUp">
-                    <qt:editorinfo scenegeometry="-360.06;67.65;-508.06;17.65;168;100" geometry="197.42;91.35;-148;-50;168;100"/>
-                    <transition type="external" event="goCounterUp" target="drivingDown">
+                    <qt:editorinfo scenegeometry="-354.30;106.54;-502.30;56.54;168;100" geometry="203.18;130.24;-148;-50;168;100"/>
+                    <transition type="external" event="goDrivingDown" target="drivingDown">
                         <qt:editorinfo endTargetFactors="79.56;23.45" startTargetFactors="77.30;84.48"/>
                     </transition>
                     <onentry>
                         <log label="state" expr="&quot;drivingUp&quot;"/>
-                        <send event="goCounterUp" delayexpr="speed"/>
-                        <script>incDriveCounter();</script>
-                        <log label="driveCounterValue:" expr="driveCounter"/>
+                        <send event="goDrivingDown" delayexpr="speed"/>
                     </onentry>
                 </state>
                 <state id="drivingDown">
-                    <qt:editorinfo scenegeometry="-389.22;253.63;-534.22;203.63;205;100" geometry="151.36;235.07;-145;-50;205;100"/>
+                    <qt:editorinfo scenegeometry="-400.35;289.16;-545.35;239.16;205;100" geometry="157.13;312.86;-145;-50;205;100"/>
                     <transition type="external" event="goDrivingUp" target="drivingUp">
-                        <qt:editorinfo movePoint="2.05;-1.02" endTargetFactors="20.04;75.57"/>
+                        <qt:editorinfo endTargetFactors="20.04;75.57" movePoint="2.05;-1.02"/>
                     </transition>
                     <onentry>
-                        <log label="drivingDown" expr="&quot;driving down&quot;"/>
-                        <if cond="driveCounter &lt; 8">
-                            <send event="goDrivingUp" delayexpr="speed"/>
-                            <else/>
-                            <send event="goToHold"/>
-                            <script>driveCounterReset();</script>
-                        </if>
+                        <log label="state" expr="&quot;drivingDown&quot;"/>
+                        <send event="goDrivingUp" delayexpr="speed"/>
                     </onentry>
-                    <transition type="external" event="goToHold" target="drivingGoingToHold">
-                        <qt:editorinfo endTargetFactors="69.56;72.92"/>
-                    </transition>
                 </state>
                 <transition type="internal" event="speedUp">
                     <qt:editorinfo endTargetFactors="89.08;52.60"/>
@@ -89,6 +74,12 @@
                     <log label="SPEED AFTER DECREASING:" expr="speed"/>
                 </transition>
             </state>
+            <transition type="external" event="goToHold" target="drivingGoingToHold">
+                <qt:editorinfo endTargetFactors="69.56;72.92" startTargetFactors="40.22;86.52"/>
+            </transition>
+            <transition type="external" event="startAccelerate" target="holdGoingToDriving">
+                <qt:editorinfo endTargetFactors="14.88;34.01" startTargetFactors="26.63;19.52"/>
+            </transition>
         </state>
     </parallel>
 </scxml>

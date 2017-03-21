@@ -8,13 +8,15 @@ Item {
     property alias mouseArea: mouseArea
     property CarStateMachine carStateMachine: CarStateMachine {
         id: csMachine
-        running: true
+        running: false
     }
     property alias csMachine: csMachine
 
     property alias image: image
 
     signal changeAnimationSpeed(bool toFaster)
+    signal accelerate()
+    signal breaks()
 
     states: [
         State {

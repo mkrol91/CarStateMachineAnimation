@@ -1,11 +1,3 @@
-function incDriveCounter() {
-    driveCounter++;
-}
-
-function driveCounterReset(){
-    driveCounter = 0;
-}
-
 function incSpeed(){
     var speedAsInt = parseInt(speed)
     speedAsInt -=25
