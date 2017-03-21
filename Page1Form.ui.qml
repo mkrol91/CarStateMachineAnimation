@@ -7,9 +7,14 @@ Item {
     property alias rectangle: rectangle
     property alias mouseArea: mouseArea
     property CarStateMachine carStateMachine: CarStateMachine {
+        id: csMachine
         running: true
     }
+    property alias csMachine: csMachine
+
     property alias image: image
+
+    signal changeAnimationSpeed(bool toFaster)
 
     states: [
         State {
@@ -60,9 +65,9 @@ Item {
                 target: image
                 source: "carDriving.png"
                 anchors.rightMargin: 0
-                anchors.bottomMargin: 47
+                anchors.bottomMargin: 10
                 anchors.leftMargin: 0
-                anchors.topMargin: -52
+                anchors.topMargin: -13
                 visible: true
             }
 
@@ -84,9 +89,9 @@ Item {
                 target: image
                 source: "carDriving.png"
                 anchors.rightMargin: 0
-                anchors.bottomMargin: -44
+                anchors.bottomMargin: -13
                 anchors.leftMargin: 0
-                anchors.topMargin: 50
+                anchors.topMargin: 16
                 visible: true
             }
 

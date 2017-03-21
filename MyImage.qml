@@ -7,6 +7,7 @@ Image {
     id: image
     anchors.fill: parent
     source: "carHold.png"
+
     Component.onCompleted: {
         console.log("MY IMAGE")
     }

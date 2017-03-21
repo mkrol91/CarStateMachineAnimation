@@ -3,18 +3,26 @@ import QtQuick.Window 2.0
 import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.0
 
-Window {
+ApplicationWindow {
+    id: mainWindow
     visible: true
-    width: 640
-    height: 480
     title: qsTr("Hello World")
 
-    Page1Form{
+    Page1{
+        id: page1
         anchors.fill: parent
-//        mouseArea.onClicked: {
-//            console.log(qsTr('Clicked on background'))
-//        }
+        focus: true
 
+        Keys.onPressed: {
+            if(event.key === Qt.Key_Plus){
+                changeAnimationSpeed(true);
+                console.log("inc")
+
+            }else if (event.key === Qt.Key_Minus){
+                changeAnimationSpeed(false);
+                console.log("dec")
+            }
+          }
     }
 
 }
