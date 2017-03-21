@@ -11,5 +11,6 @@
         <file>car.js</file>
         <file>MouseArea.qml</file>
         <file>MyImage.qml</file>
+        <file>CircularGauge.qml</file>
     </qresource>
 </RCC>

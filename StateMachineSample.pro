@@ -1,10 +1,12 @@
-QT += qml quick scxml
+QT += qml quick scxml winextras
 
 CONFIG += c++11
 
 SOURCES += main.cpp
 
 RESOURCES += qml.qrc
+
+#QT_QUICK_CONTROLS_1_STYLE=Flat ./app
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =

@@ -27,6 +27,7 @@ ApplicationWindow {
                 breaks();
             }
           }
+
     }
 
 }

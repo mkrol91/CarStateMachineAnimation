@@ -2,6 +2,8 @@ import QtQuick 2.7
 import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.0
 import CarStateMachine 1.0
+import QtQuick.Extras 1.4
+import QtQuick.Controls.Styles 1.4
 
 Item {
     property alias rectangle: rectangle
@@ -15,8 +17,9 @@ Item {
     property alias image: image
 
     signal changeAnimationSpeed(bool toFaster)
-    signal accelerate()
-    signal breaks()
+    signal accelerate
+    signal breaks
+    property alias circularGauge: circularGauge
 
     states: [
         State {
@@ -105,6 +108,10 @@ Item {
     ]
     MouseArea {
         id: mouseArea
+        anchors.rightMargin: 0
+        anchors.leftMargin: 0
+        anchors.topMargin: 0
+        anchors.bottomMargin: 0
         anchors.fill: parent
     }
     Rectangle {
@@ -114,6 +121,32 @@ Item {
 
         MyImage {
             id: image
+            anchors.rightMargin: 0
+            anchors.bottomMargin: 0
+            anchors.leftMargin: 0
+            anchors.topMargin: 0
+        }
+    }
+
+    CircularGauge {
+        id: circularGauge
+        x: 36
+        y: 25
+        anchors.rightMargin: 403
+        anchors.bottomMargin: 291
+        anchors.fill: parent
+        stepSize: 1
+        maximumValue: 100
+
+        style: CircularGaugeStyle {
+            needle: Rectangle {
+                y: outerRadius * 0.15
+                implicitWidth: outerRadius * 0.03
+                implicitHeight: outerRadius * 0.9
+                color: "#00ff00"
+                antialiasing: true
+                //                    color: Qt.rgba(0.66, 0.3, 0, 1)
+            }
         }
     }
 }
