@@ -4,6 +4,19 @@
 #include <QDebug>
 
 MainWindow::MainWindow(QScxmlStateMachine *machine): csMachine(machine)
+{        
+     qDebug()<<"Main window created";       
+}
+
+void MainWindow::initStateMachine()
 {
-     qDebug()<<"Main window created";
+       csMachine->start();
+
+       csMachine->connectToState("hold",this, MainWindow::someFunction);
+
+}
+
+void MainWindow::someFunction()
+{
+
 }

@@ -6,11 +6,11 @@
         <data id="speed" expr="&quot;100ms&quot;"/>
     </datamodel>
     <parallel id="carAnimation">
-        <qt:editorinfo scenegeometry="-1552.61;-567.81;-1436.30;-256.96;1424.50;822.72" geometry="-1552.61;-567.81;116.31;310.85;1424.50;822.72"/>
+        <qt:editorinfo geometry="-1172.98;-504.54;116.31;305.23;1539.50;916.34" scenegeometry="-1172.98;-504.54;-1056.67;-199.31;1539.50;916.34"/>
         <state id="carAnimFlow">
-            <qt:editorinfo scenegeometry="-1354.68;237.79;-1367.45;-167.60;1273.97;672.52" geometry="197.93;805.60;-12.77;-405.39;1273.97;672.52"/>
+            <qt:editorinfo geometry="197.93;805.60;-12.77;-405.39;1273.97;672.52" scenegeometry="-1354.68;237.79;-1367.45;-167.60;1273.97;672.52"/>
             <state id="holdGoingToDriving">
-                <qt:editorinfo scenegeometry="-907.36;114.81;-951.36;65.06;188;100" geometry="447.32;-122.98;-44;-49.75;188;100"/>
+                <qt:editorinfo geometry="447.32;-122.98;-44;-49.75;188;100" scenegeometry="-907.36;114.81;-951.36;65.06;188;100"/>
                 <transition type="external" event="goDriving" target="drivingUp">
                     <qt:editorinfo endTargetFactors="11.79;23.27" startTargetFactors="92.31;33.62"/>
                 </transition>
@@ -20,13 +20,13 @@
                 </onentry>
             </state>
             <state id="hold">
-                <qt:editorinfo scenegeometry="-1107.50;126.85;-1252.50;76.85;205;100" geometry="247.18;-110.94;-145;-50;205;100"/>
+                <qt:editorinfo geometry="247.18;-110.94;-145;-50;205;100" scenegeometry="-1107.50;126.85;-1252.50;76.85;205;100"/>
                 <onentry>
                     <log label="state" expr="&quot;hold&quot;"/>
                 </onentry>
             </state>
             <state id="drivingGoingToHold">
-                <qt:editorinfo scenegeometry="-965.94;294.31;-979.44;254.31;186;100" geometry="388.74;56.52;-13.50;-40;186;100"/>
+                <qt:editorinfo geometry="388.74;56.52;-13.50;-40;186;100" scenegeometry="-965.94;294.31;-979.44;254.31;186;100"/>
                 <onentry>
                     <log label="drivingGoingToHold" expr="&quot;drivingGoingToHold&quot;"/>
                     <send delay="200ms" event="stopCar"/>
@@ -36,13 +36,13 @@
                 </transition>
             </state>
             <initial>
-                <qt:editorinfo scenegeometry="-1318.45;134.82;-1347.45;114.82;49;40" geometry="36.23;-102.97;-29;-20;49;40"/>
+                <qt:editorinfo geometry="36.23;-102.97;-29;-20;49;40" scenegeometry="-1318.45;134.82;-1347.45;114.82;49;40"/>
                 <transition target="hold"/>
             </initial>
             <state id="State_17">
-                <qt:editorinfo scenegeometry="-557.48;-23.70;-745.67;-87.25;632.19;518.37" geometry="797.20;-261.49;-188.19;-63.55;632.19;518.37"/>
+                <qt:editorinfo geometry="797.20;-261.49;-188.19;-63.55;632.19;518.37" scenegeometry="-557.48;-23.70;-745.67;-87.25;632.19;518.37"/>
                 <state id="drivingUp">
-                    <qt:editorinfo scenegeometry="-354.30;106.54;-502.30;56.54;168;100" geometry="203.18;130.24;-148;-50;168;100"/>
+                    <qt:editorinfo geometry="203.18;130.24;-148;-50;168;100" scenegeometry="-354.30;106.54;-502.30;56.54;168;100"/>
                     <transition type="external" event="goDrivingDown" target="drivingDown">
                         <qt:editorinfo endTargetFactors="79.56;23.45" startTargetFactors="77.30;84.48"/>
                     </transition>
@@ -52,7 +52,7 @@
                     </onentry>
                 </state>
                 <state id="drivingDown">
-                    <qt:editorinfo scenegeometry="-400.35;289.16;-545.35;239.16;205;100" geometry="157.13;312.86;-145;-50;205;100"/>
+                    <qt:editorinfo geometry="157.13;312.86;-145;-50;205;100" scenegeometry="-400.35;289.16;-545.35;239.16;205;100"/>
                     <transition type="external" event="goDrivingUp" target="drivingUp">
                         <qt:editorinfo endTargetFactors="20.04;75.57" movePoint="2.05;-1.02"/>
                     </transition>

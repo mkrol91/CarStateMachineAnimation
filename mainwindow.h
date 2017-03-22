@@ -12,6 +12,8 @@ class MainWindow : public QQmlApplicationEngine
     Q_OBJECT
 public:
     explicit MainWindow(QScxmlStateMachine *machine);
+    void initStateMachine();
+    void someFunction();
 
 private:
     QScxmlStateMachine *csMachine;

@@ -2,7 +2,6 @@
 #include "mainwindow.h"
 #include <QGuiApplication>
 
-
 int main(int argc, char *argv[])
 {
 
@@ -14,6 +13,7 @@ int main(int argc, char *argv[])
     CarStateMachine csMachine;
     MainWindow engine(&csMachine);
     engine.load(QUrl(QLatin1String("qrc:/main.qml")));   
+    engine.initStateMachine();
 
     return app.exec();
 }
