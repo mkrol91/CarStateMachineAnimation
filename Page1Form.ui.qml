@@ -20,6 +20,7 @@ Item {
     signal accelerate
     signal breaks
     property alias circularGauge: circularGauge
+    transformOrigin: Item.Center
 
     states: [
         State {
@@ -85,6 +86,12 @@ Item {
                 target: rectangle
                 color: "#ffffff"
             }
+
+            PropertyChanges {
+                target: circularGauge
+                x: 8
+                y: 8
+            }
         },
         State {
             name: "drivingDown"
@@ -106,14 +113,6 @@ Item {
             }
         }
     ]
-    MouseArea {
-        id: mouseArea
-        anchors.rightMargin: 0
-        anchors.leftMargin: 0
-        anchors.topMargin: 0
-        anchors.bottomMargin: 0
-        anchors.fill: parent
-    }
     Rectangle {
         id: rectangle
         color: "#ffffff"
@@ -126,27 +125,36 @@ Item {
             anchors.leftMargin: 0
             anchors.topMargin: 0
         }
-    }
 
-    CircularGauge {
-        id: circularGauge
-        x: 36
-        y: 25
-        anchors.rightMargin: 403
-        anchors.bottomMargin: 291
-        anchors.fill: parent
-        stepSize: 1
-        maximumValue: 100
+        CircularGauge {
+            id: circularGauge
+            x: 8
+            y: 8
+            anchors.rightMargin: 456
+            anchors.bottomMargin: 315
+            width: 180
+            height: 180
+            stepSize: 1
+            maximumValue: 100
 
-        style: CircularGaugeStyle {
-            needle: Rectangle {
-                y: outerRadius * 0.15
-                implicitWidth: outerRadius * 0.03
-                implicitHeight: outerRadius * 0.9
-                color: "#00ff00"
-                antialiasing: true
-                //                    color: Qt.rgba(0.66, 0.3, 0, 1)
+            style: CircularGaugeStyle {
+                needle: Rectangle {
+                    y: outerRadius * 0.15
+                    implicitWidth: outerRadius * 0.03
+                    implicitHeight: outerRadius * 0.9
+                    color: "#00ff00"
+                    antialiasing: true
+                }
             }
         }
+    }
+
+    MouseArea {
+        id: mouseArea
+        anchors.rightMargin: 0
+        anchors.leftMargin: 0
+        anchors.topMargin: 0
+        anchors.bottomMargin: 0
+        anchors.fill: parent
     }
 }

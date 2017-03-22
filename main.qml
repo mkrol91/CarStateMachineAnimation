@@ -7,6 +7,8 @@ ApplicationWindow {
     id: mainWindow
     visible: true
     title: qsTr("Hello World")
+    minimumWidth: 500
+    minimumHeight: 500
 
     Page1{
         id: page1

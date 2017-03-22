@@ -13,7 +13,7 @@ Page1Form {
         }
     }
 
-    onAccelerate: {
+    onAccelerate: {      
         csMachine.start()
         csMachine.submitEvent("startAccelerate")
     }
