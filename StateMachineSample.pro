@@ -1,8 +1,9 @@
-QT += qml quick scxml winextras
+QT += qml quick scxml widgets
 
 CONFIG += c++11
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    mainwindow.cpp
 
 RESOURCES += qml.qrc
 
@@ -32,3 +33,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 STATECHARTS += \
     mystatemachine.scxml
+
+HEADERS += \
+    mainwindow.h
