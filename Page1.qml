@@ -5,30 +5,30 @@ Page1Form {
     onChangeAnimationSpeed: {
         if (toFaster) {
             console.log("++")
-            circularGauge.value += 25
+//            circularGauge.value += 25
             csMachine.submitEvent("speedUp")
         } else {
             console.log("--")
-            circularGauge.value -= 25
+//            circularGauge.value -= 25
             csMachine.submitEvent("speedDown")
         }
     }
 
     onAccelerate: {
         var isRunning = csMachine.running
-        var isHoldActive = csMachine.isActive("hold");
+        var isHoldActive = csMachine.isActive("hold")
         if (!isRunning) {
             csMachine.start()
-            csMachine.submitEvent("startAccelerate");
-        }else if (isRunning && isHoldActive){
-            csMachine.submitEvent("startAccelerate");
+            csMachine.submitEvent("startAccelerate")
+        } else if (isRunning && isHoldActive) {
+            csMachine.submitEvent("startAccelerate")
         }
     }
 
     onBreaks: {
         var isRunning = csMachine.running
         var isHoldActive = csMachine.isActive("hold")
-        if(isRunning && !isHoldActive){
+        if (isRunning && !isHoldActive) {
             csMachine.submitEvent("goToHold")
         }
     }
