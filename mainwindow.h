@@ -12,7 +12,6 @@ public:
     void someFunction();
     void speedUp();
     void drivingDown();
-
 };
 
 #endif // MAINWINDOW_H

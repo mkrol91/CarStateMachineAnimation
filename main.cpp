@@ -1,6 +1,8 @@
 #include "mycarstatemachine.h"
 #include "mainwindow.h"
 #include <QGuiApplication>
+#include "QApplication.h"
+#include <QDebug>
 
 int main(int argc, char *argv[])
 {
@@ -9,8 +11,9 @@ int main(int argc, char *argv[])
 
     qmlRegisterType<MyCarStateMachine>("MyCarStateMachine",1,0,"MyCarStateMachine");
 
+    QLatin1String mainScreen("qrc:/main.qml");
     MainWindow engine;
-    engine.load(QUrl(QLatin1String("qrc:/main.qml")));     
+    engine.load(QUrl(mainScreen));
 
     return app.exec();
 }

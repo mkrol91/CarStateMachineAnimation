@@ -8,17 +8,19 @@ import QtQuick.Controls.Styles 1.4
 Item {
     property alias rectangle: rectangle
     property alias mouseArea: mouseArea
+
     property MyCarStateMachine carStateMachine: MyCarStateMachine {
         id: csMachine
         running: false
     }
-    property alias csMachine: csMachine
 
+    property alias csMachine: csMachine
     property alias image: image
 
     signal changeAnimationSpeed(bool toFaster)
     signal accelerate
     signal breaks
+    signal hold
     property alias circularGauge: circularGauge
     transformOrigin: Item.Center
 
@@ -73,8 +75,7 @@ Item {
                 anchors.rightMargin: 0
                 anchors.bottomMargin: 10
                 anchors.leftMargin: 0
-                anchors.topMargin: -13
-                visible: true
+                anchors.topMargin: -13     
             }
 
             PropertyChanges {

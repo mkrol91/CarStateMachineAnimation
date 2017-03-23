@@ -4,8 +4,15 @@
 
 class MyCarStateMachine : public CarStateMachine
 {
+    Q_OBJECT
+
 public:
     MyCarStateMachine();
+
+public slots:
+    void holdOn();
+    void startAccelerate();
+
 };
 
 #endif // MYCARSTATEMACHINE_H

@@ -10,9 +10,9 @@ MainWindow::MainWindow()
 void MainWindow::initStateMachine()
 {
 //       csMachine->connectToState("hold",this, MainWindow::someFunction);
-////       csMachine->connectToEvent("goDriving",this,MainWindow::speedUp);
-////       csMachine->submitEvent("startAccelerate");
-////       csMachine->connectToState("drivingUp",this,MainWindow::drivingDown);
+//       csMachine->connectToEvent("goDriving",this,MainWindow::speedUp);
+//       csMachine->submitEvent("startAccelerate");
+//       csMachine->connectToState("drivingUp",this,MainWindow::drivingDown);
 //       csMachine->start();
 }
 

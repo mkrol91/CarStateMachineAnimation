@@ -13,15 +13,14 @@ ApplicationWindow {
     Page1{
         id: page1
         anchors.fill: parent
-        focus: true
+        focus: true      
 
         Keys.onPressed: {
             if(event.key === Qt.Key_Plus){
                 changeAnimationSpeed(true);
                 console.log("inc")
-
             }else if (event.key === Qt.Key_Minus){
-                changeAnimationSpeed(false);
+               changeAnimationSpeed(false);
                 console.log("dec")
             }else if (event.key === Qt.Key_Left){
                 accelerate();
@@ -29,6 +28,7 @@ ApplicationWindow {
                 breaks();
             }
           }
+
 
     }
 
