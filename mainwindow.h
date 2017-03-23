@@ -3,20 +3,16 @@
 
 #include <QQmlApplicationEngine>
 
-QT_BEGIN_NAMESPACE
-class QScxmlStateMachine;
-QT_END_NAMESPACE
-
 class MainWindow : public QQmlApplicationEngine
 {
     Q_OBJECT
 public:
-    explicit MainWindow(QScxmlStateMachine *machine);
+    explicit MainWindow();
     void initStateMachine();
     void someFunction();
+    void speedUp();
+    void drivingDown();
 
-private:
-    QScxmlStateMachine *csMachine;
 };
 
 #endif // MAINWINDOW_H

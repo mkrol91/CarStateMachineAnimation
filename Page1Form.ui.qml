@@ -1,14 +1,14 @@
 import QtQuick 2.7
 import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.0
-import CarStateMachine 1.0
+import MyCarStateMachine 1.0
 import QtQuick.Extras 1.4
 import QtQuick.Controls.Styles 1.4
 
 Item {
     property alias rectangle: rectangle
     property alias mouseArea: mouseArea
-    property CarStateMachine carStateMachine: CarStateMachine {
+    property MyCarStateMachine carStateMachine: MyCarStateMachine {
         id: csMachine
         running: false
     }

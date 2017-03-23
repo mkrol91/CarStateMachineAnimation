@@ -3,7 +3,8 @@ QT += qml quick scxml widgets
 CONFIG += c++11
 
 SOURCES += main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    mycarstatemachine.cpp
 
 RESOURCES += qml.qrc
 
@@ -35,4 +36,5 @@ STATECHARTS += \
     mystatemachine.scxml
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    mycarstatemachine.h
